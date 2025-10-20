@@ -1,0 +1,36 @@
+.Dropzone {
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--gray-a5), var(--gray-5) 25%);
+
+  &[dropzone-status='accepted'] {
+    background-color: var(--accent-4);
+
+    &::after {
+      box-shadow: color-mix(in oklab, var(--accent-a6), var(--accent-6) 25%);
+    }
+  }
+
+  &[dropzone-status='rejected'] {
+    background-color: var(--red-4);
+
+    &::after {
+      box-shadow: color-mix(in oklab, var(--red-a6), var(--red-6) 25%);
+    }
+  }
+
+  &[data-disabled='true'],
+  &[data-loading='true'] {
+    cursor: default;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--focus-8);
+    outline-offset: -1px;
+  }
+}
+
+.DropzoneInner {
+  pointer-events: none;
+  user-select: none;
+}

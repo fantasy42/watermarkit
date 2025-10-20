@@ -1,0 +1,22 @@
+.WatermarkEditorDropzone {
+  --watermark-editor-dropzone-z-index: 0;
+  z-index: var(--watermark-editor-dropzone-z-index);
+
+  &[dropzone-status='accepted'] {
+    --watermark-editor-dropzone-z-index: 1;
+  }
+
+  &[dropzone-status='rejected'] {
+    --watermark-editor-dropzone-z-index: 1;
+  }
+}
+
+.WatermarkEditorSvgContainer svg {
+  width: 100%;
+  height: 100%;
+}
+
+.WatermarkEditorSkeleton {
+  animation: none !important;
+  background-color: var(--gray-a3) !important;
+}
