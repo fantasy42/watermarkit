@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "private": true,
-  "homepage": "https://watermarkit.online",
+  "homepage": "https://www.watermarkit.online",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "next dev --webpack",

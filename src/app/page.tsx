@@ -33,7 +33,7 @@ export default function Home() {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
             name: 'Watermarkit',
-            url: 'https://watermarkit.online',
+            url: 'https://www.watermarkit.online',
           }),
         }}
       />

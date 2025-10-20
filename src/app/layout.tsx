@@ -26,7 +26,7 @@ const title =
   'Watermarkit - Free Online Photo Watermark Tool | Protect & Brand Your Images';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://watermarkit.online'),
+  metadataBase: new URL('https://www.watermarkit.online'),
   title: {
     template: '%s · Watermarkit',
     default: title,

@@ -5,7 +5,7 @@ export default function robots() {
         userAgent: '*',
       },
     ],
-    sitemap: 'https://watermarkit.online/sitemap.xml',
-    host: 'https://watermarkit.online',
+    sitemap: 'https://www.watermarkit.online/sitemap.xml',
+    host: 'https://www.watermarkit.online',
   };
 }
