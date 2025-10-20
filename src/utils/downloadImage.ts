@@ -9,9 +9,7 @@ export async function downloadImage(
   renderPng: (args: {svg: string}) => Promise<string>
 ) {
   try {
-    const t = performance.now();
     const pngUrl = await renderPng({svg});
-    console.log(`Now: ${performance.now() - t}ms`);
 
     let url: string;
 
@@ -40,8 +38,7 @@ export async function downloadImage(
 
     // Revoke the object URL on the next frame
     requestAnimationFrame(() => URL.revokeObjectURL(url));
-  } catch (error) {
-    console.log(error);
+  } catch {
     throw new WatermarkitError(DOWNLOAD_ERROR_MESSAGE);
   }
 }
