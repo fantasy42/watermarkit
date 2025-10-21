@@ -75,7 +75,7 @@ export default function Home() {
                 mb={{initial: '2', md: '0'}}
                 mt="2"
               >
-                {`Protect Your Photo in `}
+                {`Watermark Photos in `}
                 <Em>One Click</Em>
               </Heading>
               <Box
@@ -192,7 +192,7 @@ export default function Home() {
                   >
                     High Quality Export
                   </Heading>
-                  <Text size={{initial: '1', md: '2'}}>
+                  <Text as="p" size={{initial: '1', md: '2'}}>
                     Download your watermarked images in full resolution without
                     quality loss.
                   </Text>
@@ -517,7 +517,7 @@ export default function Home() {
 }
 
 const description =
-  'Easily add custom watermarks to your photos with Watermarkit. Protect your images from theft, showcase your brand, and create professional-looking watermarked pictures in seconds. Fast, free, and simple to use online.';
+  'Protect your images instantly with Watermarkit. Add custom watermarks to photos online in one click—fast, free, and secure image protection made simple.';
 
 export const metadata: Metadata = {
   description,

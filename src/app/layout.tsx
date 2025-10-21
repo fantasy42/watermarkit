@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 const title =
-  'Watermarkit - Free Online Photo Watermark Tool | Protect & Brand Your Images';
+  'Watermarkit - Free Online Photo Watermark Tool & Image Protection';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.watermarkit.online'),
