@@ -19,6 +19,7 @@ import {DropletIcon} from '../icons/DropletIcon';
 import {LightningIcon} from '../icons/LightningIcon';
 import {PaletteIcon} from '../icons/PaletteIcon';
 import {PinIcon} from '../icons/PinIcon';
+import {GitHubIcon} from '../icons/GitHubIcon';
 import {CheckCircleGreenIcon} from '../icons/CheckCircleGreenIcon';
 
 import type {Metadata} from 'next';
@@ -472,7 +473,19 @@ export default function Home() {
             </Text>
 
             <Text as="p" color="gray" size="2">
-              MIT License | © {new Date().getFullYear()}
+              <Link
+                href="https://github.com/fantasy42/watermarkit"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <GitHubIcon
+                  width={15}
+                  height={15}
+                  style={{display: 'inline'}}
+                />
+              </Link>
+              {` | MIT License | © `}
+              {new Date().getFullYear()}
             </Text>
 
             <Box
