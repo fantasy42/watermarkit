@@ -477,6 +477,7 @@ export default function Home() {
                 href="https://github.com/fantasy42/watermarkit"
                 target="_blank"
                 rel="noreferrer noopener"
+                aria-label="GitHub Repository"
               >
                 <GitHubIcon
                   width={15}

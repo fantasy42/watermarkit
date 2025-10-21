@@ -90,6 +90,7 @@ export function ColorField(props: ColorFieldProps) {
                 }
                 onChange?.(event);
               }}
+              aria-label="Color"
               tabIndex={-1}
               type="color"
               // Native <input type="color"> only accepts 6-digit hex
