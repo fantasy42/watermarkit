@@ -61,6 +61,13 @@ const config = defineConfig([
             camelCase: true,
             pascalCase: true,
           },
+          ignore: [
+            'apple-icon.tsx',
+            'icon.tsx',
+            'opengraph-image.*',
+            'robots.ts',
+            'sitemap.ts',
+          ],
         },
       ],
     },
