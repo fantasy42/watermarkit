@@ -110,7 +110,8 @@ export default function Home() {
               className="HomePaperSheet"
               position="absolute"
               width={{initial: '120px', sm: '140px', md: '170px'}}
-              height={{initial: '110px', sm: '150px', md: '190px'}}
+              height={{initial: 'auto', sm: '150px', md: '190px'}}
+              minHeight={{initial: '110px', sm: 'auto'}}
               left={{initial: '1', sm: '3', md: '6'}}
               top={{initial: '330px', sm: '4', md: '7'}}
               p={{initial: '2', md: '3'}}
