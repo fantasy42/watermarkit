@@ -46,7 +46,8 @@ export function WatermarkEditor() {
   const [svg, setSvg] = React.useState<string>();
   const [src, setSrc] = React.useState<string>();
   const [metadata, setMetadata] = React.useState<ImageMetadata>();
-  const [exportFormat, setExportFormat] = React.useState<ExportFormat>('png');
+  const [exportFormat, setExportFormat] =
+    React.useState<ExportFormat>('original');
   const [isDownloading, setIsDownloading] = React.useState<boolean>(false);
   const [isSvgLoading, setIsSvgLoading] = React.useState<boolean>(false);
 
@@ -107,7 +108,9 @@ export function WatermarkEditor() {
 
   useAbortableEffect(
     (signal) => {
-      if (!src) return;
+      if (!src) {
+        return;
+      }
 
       async function generateSvg() {
         setError(undefined);
@@ -273,10 +276,13 @@ export function WatermarkEditor() {
               multiple={false}
               maxSize={MAX_SIZE}
               accept={IMAGE_MIME_TYPE}
+              disabled={isDownloading}
               loading={isSvgLoading}
               onDrop={async (files) => {
                 const file = files[0];
-                if (!file) return;
+                if (!file) {
+                  return;
+                }
 
                 setError(undefined);
 
@@ -784,7 +790,9 @@ const DownloadButton = React.memo(function DownloadButton({
     setIsDownloading(true);
 
     try {
-      await downloadImage(svg, metadata.filename, exportFormat, renderPNG);
+      const format =
+        exportFormat === 'original' ? metadata.format : exportFormat;
+      await downloadImage(svg, metadata.filename, format, renderPNG);
     } catch (error) {
       if (isWatermarkitError(error)) {
         setError(error.message);
@@ -830,9 +838,11 @@ const fontFamilyData = {
 
 type ExportFormat = keyof typeof exportFormatData;
 const exportFormatData = {
+  original: 'Original format',
   png: 'PNG',
   jpeg: 'JPEG',
   webp: 'WebP',
+  avif: 'AVIF',
 };
 
 interface ImageMetadata extends Omit<ImageData, 'base64'> {}
