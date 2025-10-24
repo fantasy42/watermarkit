@@ -48,4 +48,24 @@ export const metadata: Metadata = {
     follow: true,
     index: true,
   },
+  icons: {
+    icon: [
+      {
+        rel: 'icon',
+        sizes: '32x32',
+        url: '/static/favicon.ico',
+      },
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        url: '/static/favicon.svg',
+      },
+    ],
+    apple: [
+      {
+        rel: 'apple-touch-icon',
+        url: '/static/apple-touch-icon.png',
+      },
+    ],
+  },
 };
