@@ -13,12 +13,13 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "strictNullChecks": true,
+    "types": ["vitest/globals"],
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",

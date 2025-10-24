@@ -1,6 +1,6 @@
-import {WatermarkitError} from './error';
 import {convertImage} from './convertImage';
 import {loadImage} from './loadImage';
+import {WatermarkitError} from './error';
 
 import type {ImageFormat} from '../types';
 
@@ -19,7 +19,7 @@ export async function getImageData(file: File): Promise<ImageData> {
   return {
     width: img.width,
     height: img.height,
-    filename: file.name.replace(/\.[^/.]+$/, ''),
+    filename: file.name.replace(/\.$|\.[^/.]+$/, ''),
     base64,
     format,
   };
@@ -42,11 +42,16 @@ function fileToBase64(file: File): Promise<string> {
   });
 }
 
-function getFileFormat(filename: string): ImageFormat {
-  const extension = filename.split('.').pop()?.toLowerCase();
+export function getFileFormat(filename: string): ImageFormat {
+  const parts = filename.split('.');
+  if (parts.length <= 1 || parts.at(-1) === '') {
+    return 'png';
+  }
 
+  const extension = parts.pop()?.toLowerCase() || '';
   if (extension === 'jpg') {
     return 'jpeg';
   }
+
   return (extension as ImageFormat) || 'png';
 }
