@@ -5,7 +5,12 @@ import pluginNextVitals from 'eslint-config-next/core-web-vitals';
 import pluginNextTs from 'eslint-config-next/typescript';
 import tseslint from 'typescript-eslint';
 
-const GLOB_IGNORES = ['**/node_modules', '**/.next', '**/*.d.ts'];
+const GLOB_IGNORES = [
+  '**/node_modules',
+  '**/.next',
+  '**/*.d.ts',
+  '**/coverage',
+];
 
 const config = defineConfig([
   globalIgnores(GLOB_IGNORES),

@@ -1,5 +1,5 @@
-import {WatermarkitError} from './error';
 import {convertImage} from './convertImage';
+import {WatermarkitError} from './error';
 
 import type {ImageFormat} from '../types';
 

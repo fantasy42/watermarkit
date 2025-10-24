@@ -1,5 +1,5 @@
-import {WatermarkitError} from './error';
 import {loadImage} from './loadImage';
+import {WatermarkitError} from './error';
 
 import type {ImageFormat} from '../types';
 
@@ -59,7 +59,7 @@ function canvasToBlob(
   });
 }
 
-function blobToBase64(blob: Blob): Promise<string> {
+export function blobToBase64(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () => resolve(reader.result as string);
