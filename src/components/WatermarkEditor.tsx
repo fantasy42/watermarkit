@@ -25,7 +25,7 @@ import {useResvgWorker} from '../utils/useResvgWorker';
 import {useAbortableEffect} from '../utils/useAbortableEffect';
 import {useDebouncedState} from '../utils/useDebouncedState';
 import {downloadImage} from '../utils/downloadImage';
-import {loadFonts} from '../utils/loadFonts';
+import {loadFont} from '../utils/loadFont';
 import {getImageData} from '../utils/getImageData';
 import {createFixedArray} from '../utils/createFixedArray';
 import {
@@ -56,7 +56,7 @@ export function WatermarkEditor() {
   const [color, setColor] = useDebouncedState('#FFFFFF');
   const [scale, setScale] = useDebouncedState([0.1]);
   const [fontWeight, setFontWeight] = React.useState<FontWeight>('bold');
-  const [fontFamily, setFontFamily] = React.useState<FontFamily>('inter');
+  const [fontFamily, setFontFamily] = React.useState<FontFamily>('Inter');
 
   const [error, setError] = React.useState<string>();
 
@@ -117,7 +117,11 @@ export function WatermarkEditor() {
         setIsSvgLoading(true);
 
         try {
-          const fonts = await loadFonts(signal);
+          const font = await loadFont(
+            {name: fontFamily, weight: fontWeightStyle},
+            signal
+          );
+
           if (signal.aborted || !metadata) {
             return;
           }
@@ -217,7 +221,7 @@ export function WatermarkEditor() {
             {
               width,
               height,
-              fonts,
+              fonts: [font],
             }
           );
 
@@ -822,9 +826,9 @@ const fontWeightData = {
 
 type FontFamily = keyof typeof fontFamilyData;
 const fontFamilyData = {
-  inter: 'Inter',
-  roboto: 'Roboto',
-  montserrat: 'Montserrat',
+  Inter: 'Inter',
+  Roboto: 'Roboto',
+  Montserrat: 'Montserrat',
 };
 
 type ExportFormat = keyof typeof exportFormatData;
