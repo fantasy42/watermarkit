@@ -3,14 +3,18 @@ import {Theme} from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import '../globals.css';
 
+import {Footer} from '../components/Footer';
+
 import type {Metadata, Viewport} from 'next';
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Theme asChild radius="none">
+        <Theme radius="none">
           <main>{children}</main>
+
+          <Footer />
         </Theme>
       </body>
     </html>

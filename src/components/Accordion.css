@@ -1,0 +1,46 @@
+.AccordionItem {
+  border-bottom: 1px solid var(--gray-3);
+}
+
+.AccordionTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  font-family: var(--default-font-family);
+  text-wrap: pretty;
+  padding-block: var(--space-3);
+  padding-inline: var(--space-4);
+  background-color: var(--gray-1);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--gray-3);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--focus-8);
+    outline-offset: -2px;
+  }
+
+  > svg {
+    transition: transform 150ms ease-out;
+
+    [data-panel-open] > & {
+      transform: rotate(45deg) scale(1.1);
+    }
+  }
+}
+
+.AccordionPanel {
+  height: var(--accordion-panel-height);
+  overflow: hidden;
+  transition: height 150ms ease-out;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    height: 0;
+  }
+}

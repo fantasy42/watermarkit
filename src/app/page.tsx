@@ -7,19 +7,18 @@ import {
   Em,
   Flex,
   Heading,
-  Link,
   Quote,
   Section,
   Text,
 } from '@radix-ui/themes';
 
+import * as Accordion from '../components/Accordion';
 import {WatermarkEditor} from '../components/WatermarkEditor';
 import {ArrowRightIcon} from '../icons/ArrowRightIcon';
 import {DropletIcon} from '../icons/DropletIcon';
 import {LightningIcon} from '../icons/LightningIcon';
 import {PaletteIcon} from '../icons/PaletteIcon';
 import {PinIcon} from '../icons/PinIcon';
-import {GitHubIcon} from '../icons/GitHubIcon';
 import {CheckCircleGreenIcon} from '../icons/CheckCircleGreenIcon';
 
 import type {Metadata} from 'next';
@@ -380,7 +379,7 @@ export default function Home() {
           id="watermark-editor"
           className="HomeGeneratorSection"
           position="relative"
-          my="9"
+          mt="9"
           py="0"
         >
           <Flex
@@ -417,7 +416,6 @@ export default function Home() {
               top="var(--minus-half-size)"
               left="var(--minus-half-size)"
             />
-
             <Box
               className="HomeGeneratorDot"
               position="absolute"
@@ -426,7 +424,6 @@ export default function Home() {
               top="var(--minus-half-size)"
               right="var(--minus-half-size)"
             />
-
             <Box
               className="HomeGeneratorDot"
               position="absolute"
@@ -445,86 +442,79 @@ export default function Home() {
             />
           </Flex>
 
-          <Box p={{initial: '4', md: '6'}}>
+          <Box position="relative" p={{initial: '4', md: '6'}}>
             <WatermarkEditor />
+
+            <Box
+              className="HomeGeneratorDot"
+              position="absolute"
+              width="var(--size)"
+              height="var(--size)"
+              bottom="var(--minus-half-size)"
+              left="var(--minus-half-size)"
+            />
+            <Box
+              className="HomeGeneratorDot"
+              position="absolute"
+              width="var(--size)"
+              height="var(--size)"
+              bottom="var(--minus-half-size)"
+              right="var(--minus-half-size)"
+            />
           </Box>
+        </Section>
 
-          <Flex
-            position="relative"
-            direction={{initial: 'column', sm: 'row'}}
-            height="100px"
+        <Section size="4">
+          <Heading
+            as="h2"
+            size={{initial: '6', sm: '8'}}
             align="center"
-            justify={{initial: 'center', sm: 'between'}}
-            p={{initial: '4', md: '6'}}
-            style={{borderTop: '1px solid var(--generator-border-color)'}}
+            weight="medium"
+            wrap="balance"
+            mb={{initial: '6', sm: '8'}}
           >
-            <Text as="p" size="2" color="gray">
-              {`Made with `}
-              <Text color="red">♥</Text>
-              {` by `}
-              <Link
-                href="https://github.com/fantasy42"
-                target="_blank"
-                rel="noreferrer noopener"
-                underline="always"
-                color="blue"
-              >
-                Fantasy
-              </Link>
-            </Text>
+            Frequently Asked Questions
+          </Heading>
 
-            <Text as="p" color="gray" size="2">
-              <Link
-                href="https://github.com/fantasy42/watermarkit"
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="GitHub Repository"
-              >
-                <GitHubIcon
-                  width={15}
-                  height={15}
-                  style={{display: 'inline'}}
-                />
-              </Link>
-              {` | MIT License | © `}
-              {new Date().getFullYear()}
-            </Text>
-
-            <Box
-              className="HomeGeneratorDot"
-              position="absolute"
-              width="var(--size)"
-              height="var(--size)"
-              top="var(--minus-half-size)"
-              left="var(--minus-half-size)"
-            />
-
-            <Box
-              className="HomeGeneratorDot"
-              position="absolute"
-              width="var(--size)"
-              height="var(--size)"
-              top="var(--minus-half-size)"
-              right="var(--minus-half-size)"
-            />
-
-            <Box
-              className="HomeGeneratorDot"
-              position="absolute"
-              width="var(--size)"
-              height="var(--size)"
-              bottom="var(--minus-half-size)"
-              left="var(--minus-half-size)"
-            />
-            <Box
-              className="HomeGeneratorDot"
-              position="absolute"
-              width="var(--size)"
-              height="var(--size)"
-              bottom="var(--minus-half-size)"
-              right="var(--minus-half-size)"
-            />
-          </Flex>
+          <Box maxWidth="800px" mx="auto">
+            <Accordion.Root>
+              {[
+                {
+                  title: 'What is Watermarkit?',
+                  text: 'Watermarkit is a free online tool that lets you add custom watermarks to your photos instantly. It helps protect your images from unauthorized use by overlaying text in just one click.',
+                },
+                {
+                  title: 'Do I need to install any software?',
+                  text: 'No installation is required. Watermarkit works directly in your browser—fast, secure, and hassle-free.',
+                },
+                {
+                  title: 'Do I need an account to use Watermarkit?',
+                  text: 'No account or sign-up is required. Just upload, watermark, and download—simple and fast.',
+                },
+                {
+                  title: 'Is Watermarkit really free to use?',
+                  text: 'Yes. Your photos remain private and secure. The project is also open source, meaning the code is publicly available for anyone to review, verify, and contribute to.',
+                },
+                {
+                  title: 'Will my photos be safe?',
+                  text: 'Absolutely. Your images are processed securely, and we don’t store or share them. Once you download your watermarked photo, it’s yours alone.',
+                },
+                {
+                  title: 'What image formats are supported?',
+                  text: 'Watermarkit supports popular formats including PNG, JPEG, WebP and AVIF. More formats may be added in the future.',
+                },
+                {
+                  title: 'Will the watermark affect my photo quality?',
+                  text: 'No. Watermarkit preserves the original resolution and quality of your images while adding your chosen watermark.',
+                },
+              ].map(({title, text}) => (
+                <Accordion.Item key={title}>
+                  <Accordion.Trigger>{title}</Accordion.Trigger>
+                  <Accordion.Panel>{text}</Accordion.Panel>
+                </Accordion.Item>
+              ))}
+            </Accordion.Root>
+          </Box>
         </Section>
       </Container>
     </React.Fragment>
