@@ -2,6 +2,7 @@
 
 @import './app/Home.css';
 @import './components/Dropzone.css';
+@import './components/Accordion.css';
 @import './components/ColorField.css';
 @import './components/WatermarkEditor.css';
 
