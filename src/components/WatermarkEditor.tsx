@@ -122,79 +122,72 @@ export function WatermarkEditor() {
             return;
           }
           const {width, height} = metadata;
+          const opacityValue = opacity[0];
 
           const watermark =
             type === 'corner' ? (
               <div
                 style={{
+                  position: 'absolute',
+                  width: '100%',
+                  height: '100%',
                   display: 'flex',
                   alignItems: 'flex-end',
                   justifyContent: 'flex-end',
-                  position: 'absolute',
-                  inset: 0,
-                  width,
-                  height,
                   padding: '1.5rem',
+                  opacity: opacityValue,
                 }}
               >
-                <div
-                  style={{
-                    opacity: opacity[0],
-                  }}
-                >
-                  {text}
-                </div>
+                {text}
               </div>
             ) : type === 'center' ? (
               <div
                 style={{
+                  position: 'absolute',
+                  width: '100%',
+                  height: '100%',
                   display: 'flex',
+                  textAlign: 'center',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  position: 'absolute',
-                  inset: 0,
-                  width,
-                  height,
+                  opacity: opacityValue,
                 }}
               >
-                <div
-                  style={{
-                    opacity: opacity[0],
-                  }}
-                >
-                  {text}
-                </div>
+                {text}
               </div>
             ) : (
               <div
                 style={{
-                  display: 'flex',
-                  flexDirection: 'column',
                   position: 'absolute',
-                  inset: 0,
-                  width,
-                  height,
-                  overflow: 'hidden',
+                  width: '100%',
+                  height: '100%',
+                  display: 'flex',
                 }}
               >
                 {createFixedArray(4).map((index) => (
                   <div
                     key={index}
                     style={{
-                      display: 'flex',
-                      flexWrap: 'nowrap',
-                      alignItems: 'center',
                       width: '200%',
                       position: 'absolute',
+                      transform: 'translateY(-50%) rotate(-30deg)',
                       top: `${(index + 0.5) * (100 / 4)}%`,
                       left: '-50%',
-                      transform: 'translateY(-50%) rotate(-30deg)',
-                      whiteSpace: 'nowrap',
-                      flexShrink: 0,
-                      opacity: opacity[0],
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      opacity: opacityValue,
                     }}
                   >
-                    {text.repeat(6)}
+                    {createFixedArray(5).map((index) => (
+                      <div
+                        key={index}
+                        style={{
+                          flexShrink: 0,
+                        }}
+                      >
+                        {text}
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
@@ -203,10 +196,8 @@ export function WatermarkEditor() {
           const svg = await satori(
             <div
               style={{
-                position: 'relative',
                 display: 'flex',
-                width: '100%',
-                height: '100%',
+                overflow: 'hidden',
                 fontFamily,
                 fontWeight: fontWeightStyle,
                 fontSize,
