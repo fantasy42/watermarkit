@@ -72,6 +72,7 @@ const config = defineConfig([
             'opengraph-image.*',
             'robots.ts',
             'sitemap.ts',
+            'not-found.tsx',
           ],
         },
       ],
