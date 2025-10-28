@@ -3,15 +3,12 @@ import {
   Badge,
   Box,
   Button,
-  Card,
   Container,
   Em,
   Flex,
-  Grid,
   Heading,
   Quote,
   Section,
-  Strong,
   Text,
 } from '@radix-ui/themes';
 
@@ -465,138 +462,6 @@ export default function Home() {
               right="var(--minus-half-size)"
             />
           </Box>
-        </Section>
-
-        <Section>
-          <Flex direction="column" align="center" justify="center" gap="2">
-            <Heading
-              as="h2"
-              size={{initial: '6', sm: '8'}}
-              align="center"
-              weight="medium"
-              wrap="balance"
-            >
-              Why Choose Watermarkit?
-            </Heading>
-            <Box maxWidth="800px">
-              <Text as="p" align="center" wrap="pretty">
-                <Strong style={{fontWeight: 'var(--font-weight-medium)'}}>
-                  Protect your creativity in seconds.
-                </Strong>
-                {` Whether you’re a photographer, designer, or small owner.`}
-              </Text>
-            </Box>
-          </Flex>
-          <Grid columns="7" gapX="4" gapY="3" mt="8">
-            <Flex asChild direction="column" gap="8" gridColumn="span 3">
-              <Card size="4" style={{display: 'flex'}}>
-                <Flex align="center" justify="center">
-                  <Flex
-                    className="FeaturesCard"
-                    direction="column"
-                    width="210px"
-                    gap="2"
-                    p="3"
-                  >
-                    <Flex align="center" justify="between">
-                      <Text size="2" color="green" weight="medium">
-                        Secure
-                      </Text>
-                      <Text size="2" color="green" weight="medium">
-                        100%
-                      </Text>
-                    </Flex>
-                    <Flex
-                      className="FeaturesCardIconContainer"
-                      height="180px"
-                      align="center"
-                      justify="center"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlSpace="preserve"
-                        width="92px"
-                        height="92px"
-                        viewBox="0 0 512 512"
-                      >
-                        <path
-                          fill="#d7ebff"
-                          d="M256 512a16.73 16.73 0 0 1-7.098-1.582C121.37 450.56 38.957 326.669 38.957 194.783V83.479a16.68 16.68 0 0 1 5.761-12.614 16.679 16.679 0 0 1 13.293-3.913c68.065 9.712 137.609-13.489 186.184-62.06 6.521-6.521 17.087-6.521 23.609 0 48.577 48.565 118.142 71.745 186.184 62.06a16.652 16.652 0 0 1 13.293 3.913 16.677 16.677 0 0 1 5.762 12.614v111.304c0 131.886-82.413 255.777-209.946 315.636A16.721 16.721 0 0 1 256 512z"
-                        />
-                        <path
-                          fill="#b7c4cc"
-                          d="M263.098 510.419c127.533-59.858 209.946-183.75 209.946-315.636V83.479a16.68 16.68 0 0 0-5.761-12.614 16.649 16.649 0 0 0-13.293-3.913c-68.044 9.685-137.609-13.495-186.184-62.06A16.647 16.647 0 0 0 256 0v512c2.424 0 4.847-.527 7.098-1.581z"
-                        />
-                        <path
-                          fill="#33a6cc"
-                          d="M406.261 194.783v-43.951c0-8.521-6.413-15.674-14.891-16.598-44.967-4.896-88.587-20.653-126.141-45.56a16.68 16.68 0 0 0-9.228-2.78V256h142.541c4.974-20.03 7.719-40.539 7.719-61.217z"
-                        />
-                        <path
-                          fill="#d7ebff"
-                          d="M264.663 433.908C332.886 392.498 380.781 327.492 398.541 256H256v180.332c3 0 6.001-.81 8.663-2.424z"
-                        />
-                        <path
-                          fill="#fff"
-                          d="M256 85.894c-3.218 0-6.435.927-9.228 2.78-37.554 24.908-81.174 40.663-126.141 45.56-8.478.924-14.891 8.075-14.891 16.598v43.951c0 20.677 2.745 41.187 7.72 61.217H256V85.894z"
-                        />
-                        <path
-                          fill="#3abbe6"
-                          d="M247.337 433.908a16.706 16.706 0 0 0 8.663 2.424V256H113.459c17.761 71.489 65.655 136.495 133.878 177.908z"
-                        />
-                      </svg>
-                    </Flex>
-                  </Flex>
-                </Flex>
-                <Box>
-                  <Heading as="h3" size="5" weight="medium" align="center">
-                    Instant Protection
-                  </Heading>
-                  <Text
-                    as="p"
-                    align="center"
-                    color="gray"
-                    size="2"
-                    wrap="pretty"
-                  >
-                    Secure your photos the moment you upload them — your
-                    watermark is applied automatically with no hassle.
-                  </Text>
-                </Box>
-              </Card>
-            </Flex>
-            <Flex asChild gridColumn="span 4">
-              <Card variant="surface">
-                <Heading as="h3" size="5" weight="medium">
-                  Brand Your Images
-                </Heading>
-                <Text as="p">
-                  Showcase your identity by stamping your logo or name across
-                  every photo, reinforcing your brand wherever your work is
-                  shared.
-                </Text>
-              </Card>
-            </Flex>
-            <Flex asChild gridColumn="span 5">
-              <Card>
-                <Heading as="h3" size="5" weight="medium">
-                  Quick & Simple
-                </Heading>
-                <Text as="p">
-                  A streamlined process designed for speed: upload, watermark,
-                  and download in moments.
-                </Text>
-              </Card>
-            </Flex>
-            <Flex direction="column" gridColumn="span 2">
-              <Heading as="h3" size="5" weight="medium">
-                Secure & Accessible
-              </Heading>
-              <Text as="p">
-                Works directly in your browser, keeping your images safe and
-                private.
-              </Text>
-            </Flex>
-          </Grid>
         </Section>
 
         <Section size="4">

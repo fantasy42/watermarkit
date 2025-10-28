@@ -11,8 +11,8 @@ import {
 
 export default function NotFound() {
   return (
-    <Container size="4" px="4" overflow="hidden" height="calc(100dvh - 84px)">
-      <Box py="6" height="100%">
+    <Container size="4" height="calc(100dvh - 84px)" overflow="hidden" px="4">
+      <Box height="100%" py="6">
         <Flex asChild direction="column" align="center" justify="center">
           <Section
             className="HomeGeneratorSection"
@@ -20,7 +20,7 @@ export default function NotFound() {
             height="100%"
             px="4"
           >
-            <Heading size={{initial: '8', md: '9'}} mb="1" align="center">
+            <Heading size={{initial: '8', md: '9'}} align="center" mb="1">
               Oh no!
             </Heading>
             <Text align="center" wrap="pretty" mb="4">
