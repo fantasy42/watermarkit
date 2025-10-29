@@ -18,19 +18,19 @@ import {
 
 import * as Accordion from '../components/Accordion';
 import {WatermarkEditor} from '../components/WatermarkEditor';
+import {DoubleChevronRightRedIcon} from '../icons/DoubleChevronRightRedIcon';
 import {ArrowRightIcon} from '../icons/ArrowRightIcon';
 import {DropletIcon} from '../icons/DropletIcon';
 import {LightningIcon} from '../icons/LightningIcon';
 import {PaletteIcon} from '../icons/PaletteIcon';
 import {PinIcon} from '../icons/PinIcon';
-import {CheckCircleGreenIcon} from '../icons/CheckCircleGreenIcon';
-
-import type {Metadata} from 'next';
 import {PenIcon} from '../icons/PenIcon';
+import {CheckCircleGreenIcon} from '../icons/CheckCircleGreenIcon';
 import {FontSizeIcon} from '../icons/FontSizeIcon';
 import {FontStyleIcon} from '../icons/FontStyleIcon';
 import {FontFamilyIcon} from '../icons/FontFamilyIcon';
-import {DoubleChevronRightRedIcon} from '../icons/DoubleChevronRightRedIcon';
+
+import type {Metadata} from 'next';
 
 export default function Home() {
   return (
