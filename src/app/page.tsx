@@ -3,23 +3,32 @@ import {
   Badge,
   Box,
   Button,
+  Card,
   Container,
   Em,
   Flex,
+  Grid,
   Heading,
   Quote,
   Section,
+  Skeleton,
+  Strong,
   Text,
 } from '@radix-ui/themes';
 
 import * as Accordion from '../components/Accordion';
 import {WatermarkEditor} from '../components/WatermarkEditor';
+import {DoubleChevronRightRedIcon} from '../icons/DoubleChevronRightRedIcon';
 import {ArrowRightIcon} from '../icons/ArrowRightIcon';
 import {DropletIcon} from '../icons/DropletIcon';
 import {LightningIcon} from '../icons/LightningIcon';
 import {PaletteIcon} from '../icons/PaletteIcon';
 import {PinIcon} from '../icons/PinIcon';
+import {PenIcon} from '../icons/PenIcon';
 import {CheckCircleGreenIcon} from '../icons/CheckCircleGreenIcon';
+import {FontSizeIcon} from '../icons/FontSizeIcon';
+import {FontStyleIcon} from '../icons/FontStyleIcon';
+import {FontFamilyIcon} from '../icons/FontFamilyIcon';
 
 import type {Metadata} from 'next';
 
@@ -462,6 +471,271 @@ export default function Home() {
               right="var(--minus-half-size)"
             />
           </Box>
+        </Section>
+
+        <Section>
+          <Flex direction="column" align="center" justify="center" gap="2">
+            <Heading
+              as="h2"
+              size={{initial: '6', sm: '8'}}
+              align="center"
+              weight="medium"
+            >
+              Why Choose Watermarkit?
+            </Heading>
+            <Text as="p" align="center">
+              <Strong style={{fontWeight: 'var(--font-weight-medium)'}}>
+                Protect your creativity in seconds.
+              </Strong>
+              {` Whether you’re a photographer, designer, or business owner.`}
+            </Text>
+          </Flex>
+          <Grid columns={{initial: '1', md: '7'}} gap="4" mt="8">
+            <Flex
+              asChild
+              direction="column"
+              gap={{initial: '4', md: '6'}}
+              gridColumn={{initial: 'auto', md: 'span 3'}}
+            >
+              <Card size="4" style={{display: 'flex'}}>
+                <Flex
+                  position="relative"
+                  direction="column"
+                  align="center"
+                  justify="center"
+                  aria-hidden
+                >
+                  <Box
+                    asChild
+                    width={{initial: '100px', sm: '128px'}}
+                    height={{initial: '100px', sm: '128px'}}
+                  >
+                    <svg fill="none" strokeWidth="2" viewBox="0 0 100 100">
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="45"
+                        strokeWidth="10"
+                        strokeDashoffset="0"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        stroke="var(--green-9)"
+                      />
+                    </svg>
+                  </Box>
+
+                  <Flex position="absolute">
+                    <Text size={{initial: '7', md: '8'}} weight="bold">
+                      100
+                    </Text>
+                  </Flex>
+                </Flex>
+
+                <Flex direction="column" gap="1">
+                  <Heading as="h3" size="5" align="center" weight="medium">
+                    Instant Protection
+                  </Heading>
+                  <Box maxWidth="500px" mx="auto">
+                    <Text as="p" size="2" align="center" color="gray">
+                      Secure your photos the moment you upload them — your
+                      watermark is applied automatically with no hassle.
+                    </Text>
+                  </Box>
+                </Flex>
+              </Card>
+            </Flex>
+            <Flex
+              asChild
+              align="end"
+              justify="end"
+              gridColumn={{initial: 'auto', md: 'span 4'}}
+              pt={{initial: '110px', xs: '175px', md: '5'}}
+            >
+              <Card size="3" variant="surface" style={{display: 'flex'}}>
+                <Flex
+                  position="absolute"
+                  top="0"
+                  left="50%"
+                  wrap="nowrap"
+                  gap={{initial: '3', xs: '6'}}
+                  style={{transform: 'translateX(-50%)'}}
+                  aria-hidden
+                >
+                  <Box
+                    asChild
+                    width={{initial: '100px', xs: '175px'}}
+                    height={{initial: '100px', xs: '175px'}}
+                  >
+                    <PenIcon />
+                  </Box>
+
+                  <Box
+                    asChild
+                    width={{initial: '100px', xs: '175px'}}
+                    height={{initial: '100px', xs: '175px'}}
+                  >
+                    <FontSizeIcon />
+                  </Box>
+
+                  <Box
+                    asChild
+                    width={{initial: '100px', xs: '175px'}}
+                    height={{initial: '100px', xs: '175px'}}
+                  >
+                    <FontStyleIcon />
+                  </Box>
+
+                  <Box
+                    asChild
+                    width={{initial: '100px', xs: '175px'}}
+                    height={{initial: '100px', xs: '175px'}}
+                  >
+                    <FontFamilyIcon />
+                  </Box>
+                </Flex>
+
+                <Flex maxWidth="500px" direction="column" gap="1">
+                  <Heading as="h3" size="5" align="right" weight="medium">
+                    Brand Your Images
+                  </Heading>
+                  <Text as="p" size="2" align="right" color="gray">
+                    Showcase your identity by stamping your logo or name across
+                    every photo, reinforcing your brand wherever your work is
+                    shared.
+                  </Text>
+                </Flex>
+              </Card>
+            </Flex>
+            <Flex asChild gridColumn={{initial: 'auto', md: 'span 5'}}>
+              <Card size="3">
+                <Flex
+                  height={{initial: '200px', md: '300px'}}
+                  direction="column"
+                  justify="between"
+                >
+                  <Flex
+                    width="46px"
+                    height="46px"
+                    align="center"
+                    justify="center"
+                    style={{
+                      boxShadow: 'var(--shadow-2)',
+                      backgroundColor: 'var(--color-background)',
+                    }}
+                  >
+                    <DoubleChevronRightRedIcon width="28" height="28" />
+                  </Flex>
+                  <Flex maxWidth="280px" direction="column" gap="1">
+                    <Heading as="h3" size="5" weight="medium">
+                      Quick & Simple
+                    </Heading>
+                    <Text as="p" size="2" color="gray">
+                      A streamlined process designed for speed: upload,
+                      watermark, and download in moments.
+                    </Text>
+                  </Flex>
+
+                  <Flex
+                    width={{initial: '300px', sm: '400px'}}
+                    height={{initial: '250px', sm: '300px'}}
+                    position="absolute"
+                    right="calc(0px - (var(--width) / 5))"
+                    bottom="calc(0px - (var(--height) / 4))"
+                    direction="column"
+                    p="3"
+                    style={{
+                      boxShadow: 'var(--shadow-3)',
+                      backgroundColor: 'var(--color-background)',
+                      zIndex: -1,
+                    }}
+                    aria-hidden
+                  >
+                    <Grid width="100%" height="100%" columns="2" gap="2">
+                      <Flex>
+                        <Skeleton
+                          className="WatermarkEditorSkeleton"
+                          height="100%"
+                          width="100%"
+                        />
+                      </Flex>
+                      <Flex direction="column" gap="1">
+                        <Flex gap="1" wrap="nowrap">
+                          <Skeleton className="WatermarkEditorSkeleton">
+                            <Box width="100px" height="50px" />
+                          </Skeleton>
+                          <Skeleton className="WatermarkEditorSkeleton">
+                            <Box width="100px" height="50px" />
+                          </Skeleton>
+                        </Flex>
+
+                        <Flex direction="column">
+                          <Text size="1">
+                            <Skeleton className="WatermarkEditorSkeleton">
+                              Some Label
+                            </Skeleton>
+                          </Text>
+                          <Skeleton className="WatermarkEditorSkeleton">
+                            <Box width="100%" height="18px" />
+                          </Skeleton>
+                        </Flex>
+
+                        <Flex direction="column">
+                          <Text size="1">
+                            <Skeleton className="WatermarkEditorSkeleton">
+                              Label
+                            </Skeleton>
+                          </Text>
+                          <Skeleton className="WatermarkEditorSkeleton">
+                            <Box width="100%" height="18px" />
+                          </Skeleton>
+                        </Flex>
+
+                        <Flex direction="column">
+                          <Text size="1">
+                            <Skeleton className="WatermarkEditorSkeleton">
+                              Something
+                            </Skeleton>
+                          </Text>
+                          <Skeleton className="WatermarkEditorSkeleton">
+                            <Box width="100%" height="18px" />
+                          </Skeleton>
+                        </Flex>
+
+                        <Skeleton
+                          className="WatermarkEditorSkeleton"
+                          mt="4"
+                          ml="9"
+                        >
+                          <Box width="80px" height="20px" />
+                        </Skeleton>
+                      </Flex>
+                    </Grid>
+                  </Flex>
+                </Flex>
+              </Card>
+            </Flex>
+            <Flex
+              height={{initial: '200px', md: 'auto'}}
+              direction="column"
+              align="center"
+              justify="center"
+              gap="1"
+              gridColumn={{initial: 'auto', md: 'span 2'}}
+              p="4"
+              style={{
+                backgroundColor: 'var(--gray-3)',
+                border: '4px dashed var(--gray-6)',
+              }}
+            >
+              <Heading as="h3" size="5" align="center" weight="medium">
+                Secure & Accessible
+              </Heading>
+              <Text as="p" size="2" align="center" color="gray">
+                Works directly in your browser, keeping your images safe and
+                private.
+              </Text>
+            </Flex>
+          </Grid>
         </Section>
 
         <Section size="4">
