@@ -3,6 +3,10 @@
 An open-source web application for adding customizable watermarks to photos.
 Easily protect your images with text or logo watermarks — all from your browser, no installation required.
 
+![Next.js](https://img.shields.io/badge/Next.js-16-black)
+![React](https://img.shields.io/badge/React-19-61dafb)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+
 ---
 
 ## ✨ Features
