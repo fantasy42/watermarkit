@@ -16,4 +16,3 @@ export function useAbortableEffect(
   }, deps);
   /* eslint-enable react-hooks/exhaustive-deps */
 }
-export const useEffect = useAbortableEffect;

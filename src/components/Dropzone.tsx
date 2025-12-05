@@ -9,7 +9,7 @@ import {DropzoneContext} from './DropzoneContext';
 import type {Accept, FileRejection, FileWithPath} from 'react-dropzone';
 import type {BoxProps} from '@radix-ui/themes';
 
-export interface DropzoneProps extends Omit<BoxProps, 'onDrop'> {
+interface DropzoneProps extends Omit<BoxProps, 'onDrop'> {
   disabled?: boolean;
   loading?: boolean;
   accept?: Accept | string[];
@@ -107,4 +107,3 @@ export {
   DropzoneIdle as Idle,
   DropzoneReject as Reject,
 } from './DropzoneStatus';
-export type {FileWithPath} from 'react-dropzone';
