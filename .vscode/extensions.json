@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    // Formating
+    "esbenp.prettier-vscode", // Prettier
+    "editorconfig.editorconfig", // EditorConfig
+    "shardulm94.trailing-spaces", // Trailing spaces
+
+    // Lint
+    "dbaeumer.vscode-eslint", // ESLint
+    "yoavbls.pretty-ts-errors", // TypeScript
+    "stylelint.vscode-stylelint" // Stylelint
+  ]
+}
