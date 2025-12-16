@@ -1,5 +1,5 @@
 'use client';
-import {Accordion} from '@base-ui-components/react/accordion';
+import {Accordion} from '@base-ui/react/accordion';
 import {Box, Flex, Text} from '@radix-ui/themes';
 
 import {PlusIcon} from '../icons/PlusIcon';
