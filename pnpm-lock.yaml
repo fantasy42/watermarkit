@@ -38,12 +38,6 @@ importers:
       satori:
         specifier: ^0.18.3
         version: 0.18.3
-      stylelint:
-        specifier: ^16.26.1
-        version: 16.26.1(typescript@5.9.3)
-      stylelint-config-standard:
-        specifier: ^39.0.1
-        version: 39.0.1(stylelint@16.26.1(typescript@5.9.3))
     devDependencies:
       '@eslint-react/eslint-plugin':
         specifier: ^2.3.10
@@ -93,6 +87,12 @@ importers:
       prettier:
         specifier: 3.6.2
         version: 3.6.2
+      stylelint:
+        specifier: ^16.26.1
+        version: 16.26.1(typescript@5.9.3)
+      stylelint-config-standard:
+        specifier: ^39.0.1
+        version: 39.0.1(stylelint@16.26.1(typescript@5.9.3))
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
